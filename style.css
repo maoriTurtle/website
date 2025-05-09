@@ -3,33 +3,45 @@ html {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 8px;
   background: rgb(247, 242, 221);
 }
 
+body {
+  margin: 0;
+}
+
 h1, h2 {
-  letter-spacing: 4px;
+  letter-spacing: 0.8rem;
   font-weight: normal;
 }
 
 h1 {
   height: 20rem;
   line-height: 20rem;
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
   background: #686C58;
   margin: 0rem;
 }
 
+@media screen and (min-width: 47rem) {
+  h1 {
+  font-size: 6rem;
+  }
+}
+
+
 h2 {
   font-size: 2.5rem;
 }
 
-h2+p {
+p {
+  text-align: left;
   font-family: "Quattrocento Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #565F55;
 }
 
@@ -42,9 +54,20 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   position: sticky;
-  top: 30px;
-  left: 30px;
+  top: 3rem; /* space for sticky nav bar */
   background: rgba(0, 0, 0, .1);
+}
+
+.para-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.para-wrapper p {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .pics-wrapper {
@@ -54,16 +77,17 @@ footer {
   flex-flow: row wrap;
 }
 
+.para-wrapper, .pics-wrapper {
+  margin-top: 2rem; /* space for sticky nav bar */
+}
+
 .nav-item {
   font-size: 2rem;
   padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 1rem;
   flex: 1 auto;
   text-align: center;
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 
 a {
@@ -72,43 +96,38 @@ a {
 }
 
 .pic-item {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 1rem;
   flex: 1 auto;
 }
 
 .section-heading {
-  margin-top: 35px;
+  margin-top: 6rem; /* space for sticky nav bar */
   overflow: hidden;
   text-align: center;
-
 }
 
 .section-heading h1, .section-heading h2 {
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 1.5rem;
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 4rem;
 }
 
-.section-heading h1:before, .section-heading h2:before,
-.section-heading h1:after, .section-heading h2:after {
+.section-heading h1::before, .section-heading h2::before,
+.section-heading h1::after, .section-heading h2::after {
   background: #565F55;
   content: "";
   display: block;
-  height: 1px;
+  height: 0.1rem;
   position: absolute;
   top: 50%;
   width: 50%;
 }
 
-.section-heading h1:before, .section-heading h2:before {
+.section-heading h1::before, .section-heading h2::before {
   right: 100%;
 }
 
-.section-heading h1:after, .section-heading h2:after {
+.section-heading h1::after, .section-heading h2::after {
   left: 100%;
 }
-
