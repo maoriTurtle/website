@@ -45,31 +45,27 @@
       <section class="section-heading">
         <h2 id="Water Colors">Water Colors</h2>
         <div class="pics-wrapper">
-          <div class="pic-item"><img alt="" src="pics/img 3.JPG" title="img 3"></div>
-          <div class="pic-item"><img alt="" src="pics/img 4.JPG" title="img 4"></div>
-          <div class="pic-item"><img alt="" src="pics/img 5.JPG" title="img 5"></div>
-          <div class="pic-item"><img alt="" src="pics/img 6.JPG" title="img 6"></div>
-          <div class="pic-item"><img alt="" src="pics/img 7.JPG" title="img 7"></div>
-          <div class="pic-item"><img alt="" src="pics/img 8.JPG" title="img 8"></div>
-          <div class="pic-item"><img alt="" src="pics/img 9.JPG" title="img 9"></div>
-          <div class="pic-item"><img alt="" src="pics/img 10.JPG" title="img 10"></div>
-          <div class="pic-item"><img alt="" src="pics/img 11.JPG" title="img 11"></div>
-          <div class="pic-item"><img alt="" src="pics/img 12.JPG" title="img 12"></div>
-          <div class="pic-item"><img alt="" src="pics/img 13.JPG" title="img 13"></div>
-          <div class="pic-item"><img alt="" src="pics/img 14.JPG" title="img 14"></div>
-          <div class="pic-item"><img alt="" src="pics/img 15.JPG" title="img 15"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 3.JPG" data-bigger-src="pics/img 3L.JPG" title="img 3"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 4.JPG" data-bigger-src="pics/img 4L.JPG" title="img 4"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 5.JPG" data-bigger-src="pics/img 5L.JPG" title="img 5"></div>
         </div>
       </section>
 
       <section class="section-heading">
         <h2 id="Multimedia">Multimedia</h2>
         <div class="pics-wrapper">
-          <div class="pic-item"><img alt="" src="pics/img 16.JPG" title="img 16"></div>
-          <div class="pic-item"><img alt="" src="pics/img 17.JPG" title="img 17"></div>
-          <div class="pic-item"><img alt="" src="pics/img 18.JPG" title="img 18"></div>
-          <div class="pic-item"><img alt="" src="pics/img 19.JPG" title="img 19"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 3.JPG" data-bigger-src="pics/img 3L.JPG" title="img 3"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 4.JPG" data-bigger-src="pics/img 4L.JPG" title="img 4"></div>
+          <div class="pic-item"><img id="my-img" src="pics/img 5.JPG" data-bigger-src="pics/img 5L.JPG" title="img 5"></div>
         </div>
       </section>
+
+      <!-- The Modal -->
+      <div id="my-modal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modal-img" class="modal-content"  src="">
+        <div id="caption"></div>
+      </div>
 
       <section class="section-heading">
         <h2 id="Articles">Articles</h2>
@@ -82,5 +78,24 @@
     <footer>
       <p>© 2025 Roxy Podlogar</p>
     </footer>
+    <script>
+      var modal = document.getElementById("my-modal");
+      var modalImg = document.getElementById("modal-img");
+      var captionText = document.getElementById("caption");
+
+      document.addEventListener("click", (e) => {
+        const elem = e.target;
+        if (elem.id==="my-img") {
+          modal.style.display = "block";
+          modalImg.src = elem.dataset.biggerSrc || elem.src;
+          captionText.innerHTML = elem.title;
+        }
+      })
+
+      var span = document.getElementsByClassName("close")[0];
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
   </body>
 </html>
